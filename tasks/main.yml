@@ -10,5 +10,5 @@
       - "9200:9200"
       - "9300:9300"
     volumes:
-      - "{{ data_dir }}:/usr/share/elasticsearch/data"
+      - "{{ data_dir }}/elastic-search:/usr/share/elasticsearch/data"
     restart_policy: always
