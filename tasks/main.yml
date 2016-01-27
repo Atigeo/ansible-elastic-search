@@ -1,10 +1,6 @@
 ---
 # tasks file for ansible-elastic-search
 
-- name: Get PWD
-  local_action: shell pwd
-  register: pwd
-
 - name: Launch elastic-search
   docker:
     image: elasticsearch:{{ elastic_search_version }}
@@ -15,5 +11,5 @@
 #      - "9200:9200"
 #      - "9300:9300"
     volumes:
-      - "{{ pwd.stdout }}/elasticsearch/data:/usr/share/elasticsearch/data"
+      - "{{ data_dir }}/elastic-search:/usr/share/elasticsearch/data"
     restart_policy: always

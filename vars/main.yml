@@ -2,3 +2,4 @@
 # vars file for ansible-elastic-search
 
 elastic_search_version: latest
+data_dir: /data
