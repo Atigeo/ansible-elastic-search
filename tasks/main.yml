@@ -5,11 +5,10 @@
   docker:
     image: elasticsearch:{{ elastic_search_version }}
     name: elastic-search 
-    net: host
-#    hostname: "elastic-search"
-#    ports:
-#      - "9200:9200"
-#      - "9300:9300"
+    hostname: "elastic-search"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
     volumes:
       - "{{ data_dir }}/elastic-search:/usr/share/elasticsearch/data"
     restart_policy: always
